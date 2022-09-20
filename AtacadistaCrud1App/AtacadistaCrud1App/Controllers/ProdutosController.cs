@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AtacadistaCrud1App.Models;
 using AtacadistaCrud1App.Models.ContextoDb;
-
+ 
 namespace AtacadistaCrud1App.Controllers
 
 {
