@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AtacadistaCrud1App.Models;
 using AtacadistaCrud1App.Models.ContextoDb;
- 
+
 namespace AtacadistaCrud1App.Controllers
 
 {
@@ -50,16 +50,13 @@ namespace AtacadistaCrud1App.Controllers
             switch (sortOrder)
             {
                 case "name_desc":
-                    produtosV = produtosV.OrderByDescending(s => s.Nome);
-                    break;
-                case "Date":
-                    produtosV = produtosV.OrderBy(s => s.Quantidade);
+                    produtosV = produtosV.OrderBy(s => s.Nome);
                     break;
                 case "date_desc":
-                    produtosV = produtosV.OrderByDescending(s => s.Categoria);
+                    produtosV = produtosV.OrderBy(s => s.Categoria);
                     break;
                 default:
-                    produtosV = produtosV.OrderBy(s => s.Nome);
+                    produtosV = produtosV.OrderBy(s => s.Id);
                     break;
             }
             int pageSize = 5;
