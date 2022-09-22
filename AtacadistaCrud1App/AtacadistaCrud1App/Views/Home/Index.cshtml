@@ -1,8 +1,21 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model AtacadistaCrud1App.Models.Usuario;
+
+@if (!String.IsNullOrEmpty(ViewBag.Erro)){
+    <h3 style="color:red; font-weight:600;">
+        @ViewBag.Erro.ToString()
+    </h3>
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@using(Html.BeginForm("Login", "Home", FormMethod.Post, new { autocomplete="off"})){
+    <label>Nome de Usuário</label>
+    @Html.TextBoxFor(x=>x.apelido) <br />
+    <br />
+    <label> Senha </label>
+    @Html.TextBoxFor(x=>x.password)
+    <br />
+    <label>Cargo</label>
+    @Html.TextBoxFor(x=>x.cargo) <br />
+    <br />
+
+    <button type="submit">Logar</button>
+}

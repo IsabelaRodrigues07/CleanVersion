@@ -4,6 +4,15 @@
 }
 
 <h1>Cadastro de produtos</h1>
+<h4>Perfil</h4>
+@Html.ActionLink("Fazer Logoff", "Sair", "Home")
+
+@*@foreach (var perm in ViewBag.Permissoes)
+{
+            <p>Cargo: <u>@perm</u></p>
+
+        <br/>
+}*@
 
 <p>
     <a asp-action="Create">Cadastrar novo produto</a>
