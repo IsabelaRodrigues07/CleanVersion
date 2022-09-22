@@ -30,17 +30,14 @@ namespace AtacadistaCrud1App.Controllers
             };
             //suponto um metodo de validação de login
             if (!usuarioDB.apelido.Equals(usuario.apelido) ||
-                !usuarioDB.password.Equals(usuario.apelido))
+                !usuarioDB.password.Equals(usuario.password))
             {
-                await new Services().Login(HttpContext, usuario);
-
+                return RedirectToAction("Index", new {ErroLogin = true} );
+                
+            }
+            await new Services().Login(HttpContext, usuario);
                 return RedirectToAction("Index", "Produtos");
 
-            }
-            else
-            {
-                return RedirectToAction("Index");
-            }
             // se a validação acima tiver sucesso continua
 
 
